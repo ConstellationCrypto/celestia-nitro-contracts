@@ -1,0 +1,324 @@
+celestia-nitro-contracts$ yarn build && yarn build:forge && DEVNET_PRIVKEY= BASESCAN_API_KEY=8CMHQUJ1JNEZ271FZWXT8VRD4MK9V7VH3F ETHERSCAN_API_KEY=CBQKA3A3U5F9Z7T7A2FJS4IMW6MFBDC8HH  ARBISCAN_API_KEY=VAQC4ZPAQGBRUMW8AR5CVAU
+KE96VNM2735 yarn deploy-factory --network arbSepolia
+yarn run v1.22.19
+warning package.json: License should be a valid SPDX license expression
+$ hardhat compile
+Nothing to compile
+No need to generate any newer typings.
+✨  Done in 0.80s.
+yarn run v1.22.19
+warning package.json: License should be a valid SPDX license expression
+$ yarn build:forge:sol && yarn build:forge:yul
+warning package.json: License should be a valid SPDX license expression
+$ forge build --skip *.yul
+[⠊] Compiling...
+[⠑] Compiling 75 files with Solc 0.8.19
+[⠘] Solc 0.8.19 finished in 307.35s
+Compiler run successful with warnings:
+Warning (8417): Since the VM version paris, "difficulty" was replaced by "prevrandao", which now returns a random number based on the beacon chain.
+  --> src/mocks/Simple.sol:52:22:
+   |
+52 |         difficulty = block.difficulty;
+   |                      ^^^^^^^^^^^^^^^^
+
+Warning (9302): Return value of low-level calls not used.
+   --> src/mocks/Simple.sol:135:9:
+    |
+135 |         to.staticcall{gas: before - 10000}(input);
+    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Warning (2072): Unused local variable.
+   --> src/celestia/BlobstreamVerifier.sol:158:22:
+    |
+158 |         (bool valid, DAVerifier.ErrorCodes errorCode) = DAVerifier.verifyRowRootToDataRootTupleRoot(
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+warning package.json: License should be a valid SPDX license expression
+$ FOUNDRY_PROFILE=yul forge build --skip *.sol
+[⠊] Compiling...
+No files changed, compilation skipped
+✨  Done in 308.40s.
+yarn run v1.22.19
+warning package.json: License should be a valid SPDX license expression
+$ hardhat run scripts/deployment.ts --network arbSepolia
+New Bridge created at address: 0x88c3D778D87a96769Bb6C93B25Ef0a2684EE4766
+Nothing to compile
+No need to generate any newer typings.
+DEPRECATION WARNING: 'hardhat-etherscan' has been deprecated in favor of 'hardhat-verify'. You can find more information about the migration in the readme.
+Verification for Bridge failed with the following error: More than one contract was found to match the deployed bytecode.
+Please use the contract parameter with one of the following contracts:
+  * src/bridge/Bridge.sol:Bridge
+  * src/mocks/BridgeUnproxied.sol:BridgeUnproxied
+
+For example:
+
+  hardhat verify --contract contracts/Example.sol:ExampleContract <other args>
+
+If you are running the verify subtask from within Hardhat instead:
+
+  await run("verify:verify", {
+    <other args>,
+    contract: "contracts/Example.sol:ExampleContract"
+  };
+New SequencerInbox created at address: 0x338d8F8aB81Cdc5Be313301518eC2dAe1e44CF37
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/SequencerInbox.sol:SequencerInbox at 0x338d8F8aB81Cdc5Be313301518eC2dAe1e44CF37
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract SequencerInbox on Etherscan.
+https://sepolia.arbiscan.io/address/0x338d8F8aB81Cdc5Be313301518eC2dAe1e44CF37#code
+Verified contract SequencerInbox successfully.
+New Inbox created at address: 0xC4440c08884144ce604B19cE9A0841Dc883c1e7A
+Warning: Since the VM version paris, "difficulty" was replaced by "prevrandao", which now returns a random number based on the beacon chain.
+  --> src/mocks/Simple.sol:52:22:
+   |
+52 |         difficulty = block.difficulty;
+   |                      ^^^^^^^^^^^^^^^^
+
+
+Warning: Unused local variable.
+   --> src/celestia/BlobstreamVerifier.sol:158:22:
+    |
+158 |         (bool valid, DAVerifier.ErrorCodes errorCode) = DAVerifier.verifyRowRootToDataRootTupleRoot(
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Function state mutability can be restricted to view
+  --> src/mocks/PendingBlkTimeAndNrAdvanceCheck.sol:19:5:
+   |
+19 |     function isAdvancing() external {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Function state mutability can be restricted to view
+  --> src/mocks/PendingBlkTimeAndNrAdvanceCheck.sol:24:5:
+   |
+24 |     function checkArbBlockHashReturnsLatest(bytes32 expected) external {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Generating typings for: 174 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 358 typings!
+Compiled 181 Solidity files successfully (evm target: paris).
+Successfully submitted source code for contract
+src/bridge/Inbox.sol:Inbox at 0xC4440c08884144ce604B19cE9A0841Dc883c1e7A
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract Inbox on Etherscan.
+https://sepolia.arbiscan.io/address/0xC4440c08884144ce604B19cE9A0841Dc883c1e7A#code
+Verified contract Inbox successfully.
+New RollupEventInbox created at address: 0x44BFE5bFeD25D2f16A1e7BF6a8579049B9B3020B
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupEventInbox.sol:RollupEventInbox at 0x44BFE5bFeD25D2f16A1e7BF6a8579049B9B3020B
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RollupEventInbox on Etherscan.
+https://sepolia.arbiscan.io/address/0x44BFE5bFeD25D2f16A1e7BF6a8579049B9B3020B#code
+Verified contract RollupEventInbox successfully.
+New Outbox created at address: 0xfc2c5561F1f96ecAD76446FB643184878006a6Bc
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/Outbox.sol:Outbox at 0xfc2c5561F1f96ecAD76446FB643184878006a6Bc
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract Outbox on Etherscan.
+https://sepolia.arbiscan.io/address/0xfc2c5561F1f96ecAD76446FB643184878006a6Bc#code
+Verified contract Outbox successfully.
+New ERC20Bridge created at address: 0x5eD1477953b4234BF09a55cDb213dF255e4A33f2
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/ERC20Bridge.sol:ERC20Bridge at 0x5eD1477953b4234BF09a55cDb213dF255e4A33f2
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ERC20Bridge on Etherscan.
+https://sepolia.arbiscan.io/address/0x5eD1477953b4234BF09a55cDb213dF255e4A33f2#code
+Verified contract ERC20Bridge successfully.
+New SequencerInbox created at address: 0x2D3385FA201317753A6fb69E1dec036e9Be3b241
+The contract 0x2D3385FA201317753A6fb69E1dec036e9Be3b241 has already been verified
+Verified contract SequencerInbox successfully.
+New ERC20Inbox created at address: 0xC86BF4c94ed0b5265BB037c9E6677831CeAF4A18
+Nothing to compile
+No need to generate any newer typings.
+Verification for ERC20Inbox failed with the following error: /Users/inomurko/opt/celestia-nitro-contracts/build/contracts/build-info/ae3ce107ed12d56433124203e9016593.json: Expected double-quoted property name in JSON at position 14468663
+New ERC20RollupEventInbox created at address: 0x32270c61176a1C64d0AF4F5c8FF47DbFA236F2EC
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/ERC20RollupEventInbox.sol:ERC20RollupEventInbox at 0x32270c61176a1C64d0AF4F5c8FF47DbFA236F2EC
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ERC20RollupEventInbox on Etherscan.
+https://sepolia.arbiscan.io/address/0x32270c61176a1C64d0AF4F5c8FF47DbFA236F2EC#code
+Verified contract ERC20RollupEventInbox successfully.
+New ERC20Outbox created at address: 0x282c6bc4377561ae8C8A3755794BF0aC5FDc4813
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/ERC20Outbox.sol:ERC20Outbox at 0x282c6bc4377561ae8C8A3755794BF0aC5FDc4813
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ERC20Outbox on Etherscan.
+https://sepolia.arbiscan.io/address/0x282c6bc4377561ae8C8A3755794BF0aC5FDc4813#code
+Verified contract ERC20Outbox successfully.
+New BridgeCreator created at address: 0xbc35d86a83BDbA5eDa767dB8741B4652200811b2
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/BridgeCreator.sol:BridgeCreator at 0xbc35d86a83BDbA5eDa767dB8741B4652200811b2
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract BridgeCreator on Etherscan.
+https://sepolia.arbiscan.io/address/0xbc35d86a83BDbA5eDa767dB8741B4652200811b2#code
+Verified contract BridgeCreator successfully.
+New OneStepProver0 created at address: 0x85bFFCD50BAB15BCd62a2B9CFB03Ae177e394A9E
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/osp/OneStepProver0.sol:OneStepProver0 at 0x85bFFCD50BAB15BCd62a2B9CFB03Ae177e394A9E
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract OneStepProver0 on Etherscan.
+https://sepolia.arbiscan.io/address/0x85bFFCD50BAB15BCd62a2B9CFB03Ae177e394A9E#code
+Verified contract OneStepProver0 successfully.
+New OneStepProverMemory created at address: 0xdA905abbc2F6D40f53A5563EE0adf08DFFAc08A3
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/osp/OneStepProverMemory.sol:OneStepProverMemory at 0xdA905abbc2F6D40f53A5563EE0adf08DFFAc08A3
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract OneStepProverMemory on Etherscan.
+https://sepolia.arbiscan.io/address/0xdA905abbc2F6D40f53A5563EE0adf08DFFAc08A3#code
+Verified contract OneStepProverMemory successfully.
+New OneStepProverMath created at address: 0x9Cd8DF86151a24DFec17abBC28691f2bb1d42521
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/osp/OneStepProverMath.sol:OneStepProverMath at 0x9Cd8DF86151a24DFec17abBC28691f2bb1d42521
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract OneStepProverMath on Etherscan.
+https://sepolia.arbiscan.io/address/0x9Cd8DF86151a24DFec17abBC28691f2bb1d42521#code
+Verified contract OneStepProverMath successfully.
+New OneStepProverHostIo created at address: 0x2381304227d6F04B54B7B68f2314562b825fe629
+Nothing to compile
+No need to generate any newer typings.
+Warning: Unused local variable.
+   --> src/celestia/BlobstreamVerifier.sol:158:22:
+    |
+158 |         (bool valid, DAVerifier.ErrorCodes errorCode) = DAVerifier.verifyRowRootToDataRootTupleRoot(
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Compiling your contract excluding unrelated contracts did not produce identical bytecode.
+Trying again with the full solc input used to compile and deploy it.
+This means that unrelated contracts may be displayed on Etherscan...
+
+Successfully submitted source code for contract
+src/osp/OneStepProverHostIo.sol:OneStepProverHostIo at 0x2381304227d6F04B54B7B68f2314562b825fe629
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified full build of contract OneStepProverHostIo on Etherscan.
+https://sepolia.arbiscan.io/address/0x2381304227d6F04B54B7B68f2314562b825fe629#code
+Verified contract OneStepProverHostIo successfully.
+New OneStepProofEntry created at address: 0x6178Aabc990Be4242a0d31F3EF275Ea900fA947A
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/osp/OneStepProofEntry.sol:OneStepProofEntry at 0x6178Aabc990Be4242a0d31F3EF275Ea900fA947A
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract OneStepProofEntry on Etherscan.
+https://sepolia.arbiscan.io/address/0x6178Aabc990Be4242a0d31F3EF275Ea900fA947A#code
+Verified contract OneStepProofEntry successfully.
+New ChallengeManager created at address: 0x9ae30daB6d9cCDC2eF9659fAEaC1AD9Ac310f207
+Nothing to compile
+No need to generate any newer typings.
+DEPRECATION WARNING: 'hardhat-etherscan' has been deprecated in favor of 'hardhat-verify'. You can find more information about the migration in the readme.
+Verification for ChallengeManager failed with the following error: More than one contract was found to match the deployed bytecode.
+Please use the contract parameter with one of the following contracts:
+  * src/challenge/ChallengeManager.sol:ChallengeManager
+  * src/mocks/SingleExecutionChallenge.sol:SingleExecutionChallenge
+
+For example:
+
+  hardhat verify --contract contracts/Example.sol:ExampleContract <other args>
+
+If you are running the verify subtask from within Hardhat instead:
+
+  await run("verify:verify", {
+    <other args>,
+    contract: "contracts/Example.sol:ExampleContract"
+  };
+New RollupAdminLogic created at address: 0xD47bBB95DF7e045b98172F08747702719F9EF8C6
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupAdminLogic.sol:RollupAdminLogic at 0xD47bBB95DF7e045b98172F08747702719F9EF8C6
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RollupAdminLogic on Etherscan.
+https://sepolia.arbiscan.io/address/0xD47bBB95DF7e045b98172F08747702719F9EF8C6#code
+Verified contract RollupAdminLogic successfully.
+New RollupUserLogic created at address: 0x9676eeB4587c0EeaB28c37D4E952B2B0a2f1542f
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupUserLogic.sol:RollupUserLogic at 0x9676eeB4587c0EeaB28c37D4E952B2B0a2f1542f
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RollupUserLogic on Etherscan.
+https://sepolia.arbiscan.io/address/0x9676eeB4587c0EeaB28c37D4E952B2B0a2f1542f#code
+Verified contract RollupUserLogic successfully.
+New ValidatorUtils created at address: 0xf4642c3C2ee8A2f005B37Bb9530F2307Eb46E8Be
+Generating typings for: 3 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 102 typings!
+Compiled 1 Solidity file successfully (evm target: london).
+Successfully submitted source code for contract
+src/rollup/ValidatorUtils.sol:ValidatorUtils at 0xf4642c3C2ee8A2f005B37Bb9530F2307Eb46E8Be
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ValidatorUtils on Etherscan.
+https://sepolia.arbiscan.io/address/0xf4642c3C2ee8A2f005B37Bb9530F2307Eb46E8Be#code
+Verified contract ValidatorUtils successfully.
+New ValidatorWalletCreator created at address: 0x0A431A5ef9C16B73d05861d4C4C4A0b6A90C2Ce8
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/ValidatorWalletCreator.sol:ValidatorWalletCreator at 0x0A431A5ef9C16B73d05861d4C4C4A0b6A90C2Ce8
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ValidatorWalletCreator on Etherscan.
+https://sepolia.arbiscan.io/address/0x0A431A5ef9C16B73d05861d4C4C4A0b6A90C2Ce8#code
+Verified contract ValidatorWalletCreator successfully.
+New RollupCreator created at address: 0xB14601BF95461ba57DDdd97903355F95053ea55F
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupCreator.sol:RollupCreator at 0xB14601BF95461ba57DDdd97903355F95053ea55F
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RollupCreator on Etherscan.
+https://sepolia.arbiscan.io/address/0xB14601BF95461ba57DDdd97903355F95053ea55F#code
+Verified contract RollupCreator successfully.
+New DeployHelper created at address: 0x743f37A02cA7d29DeA68963C20462b95f4Fb8C8F
+Generating typings for: 3 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 102 typings!
+Compiled 1 Solidity file successfully (evm target: london).
+Successfully submitted source code for contract
+src/rollup/DeployHelper.sol:DeployHelper at 0x743f37A02cA7d29DeA68963C20462b95f4Fb8C8F
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract DeployHelper on Etherscan.
+https://sepolia.arbiscan.io/address/0x743f37A02cA7d29DeA68963C20462b95f4Fb8C8F#code
+Verified contract DeployHelper successfully.
+Waiting for the Template to be set on the Rollup Creator
+Template is set on the Rollup Creator
+✨  Done in 1251.99s.
+inomurko@Inos-MBP:~/opt/celestia-nitro-contracts$ 

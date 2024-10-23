@@ -1,0 +1,279 @@
+celestia-nitro-contracts$  MAINNET_PRIVKEY= BASESCAN_API_KEY=8CMHQUJ1JNEZ271FZWXT8VRD4MK9V7VH3F ETHERSCAN_API_KEY=CBQKA3A3U5F9Z7T7A2FJS4IMW6MFBDC8HH  ARBISCAN_API_KEY=VAQC4ZPAQGBRUMW8AR5CVAUKE96VNM2735 yarn deploy-factory --network base
+yarn run v1.22.19
+warning package.json: License should be a valid SPDX license expression
+$ hardhat run scripts/deployment.ts --network base
+Warning: Since the VM version paris, "difficulty" was replaced by "prevrandao", which now returns a random number based on the beacon chain.
+  --> src/mocks/Simple.sol:52:22:
+   |
+52 |         difficulty = block.difficulty;
+   |                      ^^^^^^^^^^^^^^^^
+
+
+Warning: Unused local variable.
+   --> src/celestia/BlobstreamVerifier.sol:158:22:
+    |
+158 |         (bool valid, DAVerifier.ErrorCodes errorCode) = DAVerifier.verifyRowRootToDataRootTupleRoot(
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Function state mutability can be restricted to view
+  --> src/mocks/PendingBlkTimeAndNrAdvanceCheck.sol:19:5:
+   |
+19 |     function isAdvancing() external {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Function state mutability can be restricted to view
+  --> src/mocks/PendingBlkTimeAndNrAdvanceCheck.sol:24:5:
+   |
+24 |     function checkArbBlockHashReturnsLatest(bytes32 expected) external {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Compiled 181 Solidity files successfully (evm target: paris).
+New Bridge created at address: 0xa59234983001157BCd2221B2c5b43509B74B768D
+Nothing to compile
+No need to generate any newer typings.
+DEPRECATION WARNING: 'hardhat-etherscan' has been deprecated in favor of 'hardhat-verify'. You can find more information about the migration in the readme.
+Verification for Bridge failed with the following error: More than one contract was found to match the deployed bytecode.
+Please use the contract parameter with one of the following contracts:
+  * src/bridge/Bridge.sol:Bridge
+  * src/mocks/BridgeUnproxied.sol:BridgeUnproxied
+
+For example:
+
+  hardhat verify --contract contracts/Example.sol:ExampleContract <other args>
+
+If you are running the verify subtask from within Hardhat instead:
+
+  await run("verify:verify", {
+    <other args>,
+    contract: "contracts/Example.sol:ExampleContract"
+  };
+New SequencerInbox created at address: 0x07a6B4B9c43c8D9A374048A9A71f9da76eF58066
+The contract 0x07a6B4B9c43c8D9A374048A9A71f9da76eF58066 has already been verified
+Verified contract SequencerInbox successfully.
+New Inbox created at address: 0xC2b25BDA0d8A79Fc5468D35aB4150BF162A996d8
+Nothing to compile
+No need to generate any newer typings.
+DEPRECATION WARNING: 'hardhat-etherscan' has been deprecated in favor of 'hardhat-verify'. You can find more information about the migration in the readme.
+Verification for Inbox failed with the following error: Failed to send contract verification request.
+Endpoint URL: https://api.basescan.org/api
+Reason: The Etherscan API responded that the address 0xC2b25BDA0d8A79Fc5468D35aB4150BF162A996d8 does not have bytecode.
+This can happen if the contract was recently deployed and this fact hasn't propagated to the backend yet.
+Try waiting for a minute before verifying your contract. If you are invoking this from a script,
+try to wait for five confirmations of your contract deployment transaction before running the verification subtask.
+New RollupEventInbox created at address: 0x72a3825a0f09363609746fa1E99eA2F75f70dF11
+Warning: Since the VM version paris, "difficulty" was replaced by "prevrandao", which now returns a random number based on the beacon chain.
+  --> src/mocks/Simple.sol:52:22:
+   |
+52 |         difficulty = block.difficulty;
+   |                      ^^^^^^^^^^^^^^^^
+
+
+Warning: Unused local variable.
+   --> src/celestia/BlobstreamVerifier.sol:158:22:
+    |
+158 |         (bool valid, DAVerifier.ErrorCodes errorCode) = DAVerifier.verifyRowRootToDataRootTupleRoot(
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Function state mutability can be restricted to view
+  --> src/mocks/PendingBlkTimeAndNrAdvanceCheck.sol:19:5:
+   |
+19 |     function isAdvancing() external {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Function state mutability can be restricted to view
+  --> src/mocks/PendingBlkTimeAndNrAdvanceCheck.sol:24:5:
+   |
+24 |     function checkArbBlockHashReturnsLatest(bytes32 expected) external {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Generating typings for: 174 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 358 typings!
+Compiled 181 Solidity files successfully (evm target: paris).
+Successfully submitted source code for contract
+src/rollup/RollupEventInbox.sol:RollupEventInbox at 0x72a3825a0f09363609746fa1E99eA2F75f70dF11
+for verification on the block explorer. Waiting for verification result...
+
+Verification for RollupEventInbox failed with the following error: Cannot read properties of undefined (reading 'trim')
+New Outbox created at address: 0xe48cFc59Af7C295727685F9b09CaA59e7e99A3D5
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/Outbox.sol:Outbox at 0xe48cFc59Af7C295727685F9b09CaA59e7e99A3D5
+for verification on the block explorer. Waiting for verification result...
+
+Verification for Outbox failed with the following error: Cannot read properties of undefined (reading 'trim')
+New ERC20Bridge created at address: 0xE8261Aa855CD24612704DF2Af731f26D17d1067D
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/ERC20Bridge.sol:ERC20Bridge at 0xE8261Aa855CD24612704DF2Af731f26D17d1067D
+for verification on the block explorer. Waiting for verification result...
+
+Verification for ERC20Bridge failed with the following error: Cannot read properties of undefined (reading 'trim')
+New SequencerInbox created at address: 0x09Ffff5B02a778C5D859Bdf244E7cd54376B8c0d
+The contract 0x09Ffff5B02a778C5D859Bdf244E7cd54376B8c0d has already been verified
+Verified contract SequencerInbox successfully.
+New ERC20Inbox created at address: 0x87B7fACc094F326934d18D24abd6F866CcAFAa36
+Generating typings for: 3 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 102 typings!
+Compiled 1 Solidity file successfully (evm target: london).
+Successfully submitted source code for contract
+src/bridge/ERC20Inbox.sol:ERC20Inbox at 0x87B7fACc094F326934d18D24abd6F866CcAFAa36
+for verification on the block explorer. Waiting for verification result...
+
+Verification for ERC20Inbox failed with the following error: Cannot read properties of undefined (reading 'trim')
+New ERC20RollupEventInbox created at address: 0xa11F3C5B0799903A98b7F73cC4311d6dF29f70Fd
+Generating typings for: 3 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 102 typings!
+Compiled 1 Solidity file successfully (evm target: london).
+Successfully submitted source code for contract
+src/rollup/ERC20RollupEventInbox.sol:ERC20RollupEventInbox at 0xa11F3C5B0799903A98b7F73cC4311d6dF29f70Fd
+for verification on the block explorer. Waiting for verification result...
+
+Verification for ERC20RollupEventInbox failed with the following error: Cannot read properties of undefined (reading 'trim')
+New ERC20Outbox created at address: 0x3E70EBd9Aa2e535d9b5A1b234DECdBd4D11e3827
+Generating typings for: 3 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 102 typings!
+Compiled 1 Solidity file successfully (evm target: london).
+Successfully submitted source code for contract
+src/bridge/ERC20Outbox.sol:ERC20Outbox at 0x3E70EBd9Aa2e535d9b5A1b234DECdBd4D11e3827
+for verification on the block explorer. Waiting for verification result...
+
+Verification for ERC20Outbox failed with the following error: Cannot read properties of undefined (reading 'trim')
+New BridgeCreator created at address: 0xED123f972c668852b4F4f8932A125Ee9C482C456
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/BridgeCreator.sol:BridgeCreator at 0xED123f972c668852b4F4f8932A125Ee9C482C456
+for verification on the block explorer. Waiting for verification result...
+
+Verification for BridgeCreator failed with the following error: Cannot read properties of undefined (reading 'trim')
+New OneStepProver0 created at address: 0x8A3C3c6CdA3F7233c01042DF321e38f33Ad28AaB
+Generating typings for: 3 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 102 typings!
+Compiled 1 Solidity file successfully (evm target: london).
+Successfully submitted source code for contract
+src/osp/OneStepProver0.sol:OneStepProver0 at 0x8A3C3c6CdA3F7233c01042DF321e38f33Ad28AaB
+for verification on the block explorer. Waiting for verification result...
+
+Verification for OneStepProver0 failed with the following error: Cannot read properties of undefined (reading 'trim')
+New OneStepProverMemory created at address: 0xC8f46f2B5055BED0df582115cBe9004c1F1e4988
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/osp/OneStepProverMemory.sol:OneStepProverMemory at 0xC8f46f2B5055BED0df582115cBe9004c1F1e4988
+for verification on the block explorer. Waiting for verification result...
+
+Verification for OneStepProverMemory failed with the following error: Cannot read properties of undefined (reading 'trim')
+New OneStepProverMath created at address: 0x4f8E1CEC4cc488541856748ddb46C3D70f87Dc48
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/osp/OneStepProverMath.sol:OneStepProverMath at 0x4f8E1CEC4cc488541856748ddb46C3D70f87Dc48
+for verification on the block explorer. Waiting for verification result...
+
+Verification for OneStepProverMath failed with the following error: Cannot read properties of undefined (reading 'trim')
+New OneStepProverHostIo created at address: 0x232596FE79983d6125176Fe2E43ab3f91a81C022
+Nothing to compile
+No need to generate any newer typings.
+Warning: Unused local variable.
+   --> src/celestia/BlobstreamVerifier.sol:158:22:
+    |
+158 |         (bool valid, DAVerifier.ErrorCodes errorCode) = DAVerifier.verifyRowRootToDataRootTupleRoot(
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Compiling your contract excluding unrelated contracts did not produce identical bytecode.
+Trying again with the full solc input used to compile and deploy it.
+This means that unrelated contracts may be displayed on Etherscan...
+
+Successfully submitted source code for contract
+src/osp/OneStepProverHostIo.sol:OneStepProverHostIo at 0x232596FE79983d6125176Fe2E43ab3f91a81C022
+for verification on the block explorer. Waiting for verification result...
+
+Verification for OneStepProverHostIo failed with the following error: Cannot read properties of undefined (reading 'trim')
+New OneStepProofEntry created at address: 0x6fAf28E1297348aD0863a3477B1682DD18A554AE
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/osp/OneStepProofEntry.sol:OneStepProofEntry at 0x6fAf28E1297348aD0863a3477B1682DD18A554AE
+for verification on the block explorer. Waiting for verification result...
+
+Verification for OneStepProofEntry failed with the following error: Cannot read properties of undefined (reading 'trim')
+New ChallengeManager created at address: 0x756709bBf14B1d34d7B8211695893574F2879bCD
+Nothing to compile
+No need to generate any newer typings.
+DEPRECATION WARNING: 'hardhat-etherscan' has been deprecated in favor of 'hardhat-verify'. You can find more information about the migration in the readme.
+Verification for ChallengeManager failed with the following error: More than one contract was found to match the deployed bytecode.
+Please use the contract parameter with one of the following contracts:
+  * src/challenge/ChallengeManager.sol:ChallengeManager
+  * src/mocks/SingleExecutionChallenge.sol:SingleExecutionChallenge
+
+For example:
+
+  hardhat verify --contract contracts/Example.sol:ExampleContract <other args>
+
+If you are running the verify subtask from within Hardhat instead:
+
+  await run("verify:verify", {
+    <other args>,
+    contract: "contracts/Example.sol:ExampleContract"
+  };
+New RollupAdminLogic created at address: 0x9c9E455789D7527c371ca7718814d21ad184c577
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupAdminLogic.sol:RollupAdminLogic at 0x9c9E455789D7527c371ca7718814d21ad184c577
+for verification on the block explorer. Waiting for verification result...
+
+Verification for RollupAdminLogic failed with the following error: Cannot read properties of undefined (reading 'trim')
+New RollupUserLogic created at address: 0x7544fEEFAb1b04970Fc86510e389e2E58807987b
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupUserLogic.sol:RollupUserLogic at 0x7544fEEFAb1b04970Fc86510e389e2E58807987b
+for verification on the block explorer. Waiting for verification result...
+
+Verification for RollupUserLogic failed with the following error: Cannot read properties of undefined (reading 'trim')
+New ValidatorUtils created at address: 0x76447FA4898913Da9f5215ac2b8A56d16B01AAeC
+Generating typings for: 3 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 102 typings!
+Compiled 1 Solidity file successfully (evm target: london).
+Successfully submitted source code for contract
+src/rollup/ValidatorUtils.sol:ValidatorUtils at 0x76447FA4898913Da9f5215ac2b8A56d16B01AAeC
+for verification on the block explorer. Waiting for verification result...
+
+Verification for ValidatorUtils failed with the following error: Cannot read properties of undefined (reading 'trim')
+New ValidatorWalletCreator created at address: 0x1293aD5B7711643b11E5bA730dFaE907e896D208
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/ValidatorWalletCreator.sol:ValidatorWalletCreator at 0x1293aD5B7711643b11E5bA730dFaE907e896D208
+for verification on the block explorer. Waiting for verification result...
+
+Verification for ValidatorWalletCreator failed with the following error: Cannot read properties of undefined (reading 'trim')
+New RollupCreator created at address: 0xFF862244E1206084c947D897408475133e9410dE
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupCreator.sol:RollupCreator at 0xFF862244E1206084c947D897408475133e9410dE
+for verification on the block explorer. Waiting for verification result...
+
+Verification for RollupCreator failed with the following error: Cannot read properties of undefined (reading 'trim')
+New DeployHelper created at address: 0x75a278781805B00d4Ce9Ba1C18853B0328FbC526
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/DeployHelper.sol:DeployHelper at 0x75a278781805B00d4Ce9Ba1C18853B0328FbC526
+for verification on the block explorer. Waiting for verification result...
+
+Verification for DeployHelper failed with the following error: Cannot read properties of undefined (reading 'trim')
+Waiting for the Template to be set on the Rollup Creator
+Template is set on the Rollup Creator
+✨  Done in 1515.01s.

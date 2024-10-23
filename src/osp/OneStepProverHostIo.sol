@@ -37,8 +37,22 @@ contract OneStepProverHostIo is IOneStepProver {
     bytes1 public constant CELESTIA_MESSAGE_HEADER_FLAG = 0x63;
 
     // Blobstream contract (address on Arbitrum One Sepolia, MAKE SURE TO CHANGE FOR CORRESPONDING SETTLEMENT LAYER PRIOR TO DEPLOYMENT)
-    address public constant BLOBSTREAM = 0xc3e209eb245Fd59c8586777b499d6A665DF3ABD2;
+    // https://docs.celestia.org/how-to-guides/blobstream
+    //Arb sepolia
+    //Base sepolia
+    //address public constant BLOBSTREAM = 0xc3e209eb245Fd59c8586777b499d6A665DF3ABD2;
 
+    //Base
+    //Arb
+    //address public constant BLOBSTREAM = 0xA83ca7775Bc2889825BcDeDfFa5b758cf69e8794;
+    
+    //Sepolia 
+    //address public constant BLOBSTREAM = 0xF0c6429ebAB2e7DC6e05DaFB61128bE21f13cb1e;
+
+
+    //Mainnet
+    address public constant BLOBSTREAM = 0x7Cf3876F681Dbb6EdA8f6FfC45D66B996Df08fAe;
+    
     function setLeafByte(bytes32 oldLeaf, uint256 idx, uint8 val) internal pure returns (bytes32) {
         require(idx < LEAF_SIZE, "BAD_SET_LEAF_BYTE_IDX");
         // Take into account that we are casting the leaf to a big-endian integer
