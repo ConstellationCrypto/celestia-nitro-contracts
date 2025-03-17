@@ -50,7 +50,7 @@ contract OneStepProverHostIo is IOneStepProver {
 
 
     //Mainnet
-    address public constant BLOBSTREAM = 0x7Cf3876F681Dbb6EdA8f6FfC45D66B996Df08fAe;
+    //address public constant BLOBSTREAM = 0x7Cf3876F681Dbb6EdA8f6FfC45D66B996Df08fAe;
 
     function setLeafByte(bytes32 oldLeaf, uint256 idx, uint8 val) internal pure returns (bytes32) {
         require(idx < LEAF_SIZE, "BAD_SET_LEAF_BYTE_IDX");

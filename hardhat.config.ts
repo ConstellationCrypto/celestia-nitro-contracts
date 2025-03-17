@@ -1,12 +1,13 @@
 import '@nomiclabs/hardhat-waffle'
 import 'hardhat-deploy'
 import '@nomiclabs/hardhat-ethers'
-import '@nomicfoundation/hardhat-verify'
+//import '@nomicfoundation/hardhat-verify'
 import '@typechain/hardhat'
 import 'solidity-coverage'
 import 'hardhat-gas-reporter'
 import 'hardhat-contract-sizer'
 import 'hardhat-ignore-warnings'
+import "@nomiclabs/hardhat-etherscan";
 // import '@tovarishfin/hardhat-yul';
 import dotenv from 'dotenv'
 
@@ -95,6 +96,11 @@ module.exports = {
       default: 0,
     },
   },
+  etherscan: {
+    // Your API key for Etherscan
+    // Obtain one at https://etherscan.io/
+    apiKey: process.env['ETHERSCAN_API_KEY']
+  },
   networks: {
     hardhat: {
       chainId: 1338,
@@ -156,7 +162,7 @@ module.exports = {
         : [],
     },
     baseSepolia: {
-      url: 'https://base-sepolia.g.alchemy.com/v2/XGpartgZXFCFedUcnvJP40usFO33wM1l',
+      url: 'https://base-sepolia.g.alchemy.com/v2/' + process.env['ALCHEMY_APIKEY'], 
       accounts: process.env['DEVNET_PRIVKEY']
         ? [process.env['DEVNET_PRIVKEY']]
         : [],
@@ -179,12 +185,6 @@ module.exports = {
         ? [process.env['MAINNET_PRIVKEY']]
         : [],
     },
-    baseSepolia: {
-      url: 'https://sepolia.base.org',
-      accounts: process.env['DEVNET_PRIVKEY']
-        ? [process.env['DEVNET_PRIVKEY']]
-        : [],
-    },
     geth: {
       url: 'http://localhost:8545',
     },
@@ -201,7 +201,7 @@ module.exports = {
       arbGoerliRollup: process.env['ARBISCAN_API_KEY'],
       arbSepolia: process.env['ARBISCAN_API_KEY'],
       base: process.env['BASESCAN_API_KEY'],
-      baseSepolia: process.env['BASESCAN_API_KEY'],
+      baseSepolia: process.env['ETHERSCAN_API_KEY'],
     },
     customChains: [
       {
@@ -243,6 +243,9 @@ module.exports = {
   },
   gasReporter: {
     enabled: process.env.DISABLE_GAS_REPORTER ? false : true,
+  },
+  sourcify: {
+    enabled: true
   },
   typechain: {
     outDir: 'build/types',
