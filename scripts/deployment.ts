@@ -1,26 +1,48 @@
 import { ethers } from 'hardhat'
-import '@nomiclabs/hardhat-ethers'
-import { deployAllContracts, _isRunningOnArbitrum } from './deploymentUtils'
-import { maxDataSize } from './config'
 
-import {
-  ArbSys__factory
-} from '../build/types'
+import '@nomiclabs/hardhat-ethers'
+import { deployAllContracts } from './deploymentUtils'
+
+// 90% of Geth's 128KB tx size limit, leaving ~13KB for proving
+// This need to be adjusted for Orbit chains
+if (!process.env.MAX_DATA_SIZE)
+  throw "missing MAX_DATA_SIZE"
+const maxDataSize = process.env.MAX_DATA_SIZE
+
+const NUM_RETRIES = 10
+
+async function withRetry(
+  f: () => Promise<ethers.providers.TransactionResponse>,
+): Promise<ethers.providers.TransactionResponse> {
+  for (let tries = 0; tries < NUM_RETRIES; tries++) {
+    try {
+      const tx = await f();
+      console.log(`Sent transaction: ${tx.hash}`);
+      await tx.wait();
+      return tx;
+    } catch (e) {
+      console.error(`Failed to send transaction: ${(e as Error).message}`);
+    }
+  }
+  throw new Error('Failed to send transaction');
+}
+
+async function sendTransaction(
+  transaction: ethers.providers.TransactionRequest,
+): Promise<ethers.providers.TransactionResponse> {
+  return await withRetry(async () =>
+    this._sendTransaction({
+      ...transaction,
+      nonce: await this.getTransactionCount(),
+      gasPrice: (await this.getGasPrice()).mul(15).div(10),
+    }),
+  )
+}
 
 async function main() {
   const [signer] = await ethers.getSigners()
-  
-  console.log('Deploying contracts with maxDataSize:', maxDataSize)
-  if (process.env['IGNORE_MAX_DATA_SIZE_WARNING'] !== 'true') {
-    let isArbitrum = await _isRunningOnArbitrum(signer)
-    if (isArbitrum && maxDataSize as any !== 104857) {
-      throw new Error('maxDataSize should be 104857 when the parent chain is Arbitrum (set IGNORE_MAX_DATA_SIZE_WARNING to ignore)')
-    } else if (!isArbitrum && maxDataSize as any !== 117964) {
-      throw new Error('maxDataSize should be 117964 when the parent chain is not Arbitrum (set IGNORE_MAX_DATA_SIZE_WARNING to ignore)')
-    }
-  } else {
-    console.log('Ignoring maxDataSize warning')
-  }
+  signer._sendTransaction = signer.sendTransaction
+  signer.sendTransaction = sendTransaction
 
   try {
     // Deploying all contracts
