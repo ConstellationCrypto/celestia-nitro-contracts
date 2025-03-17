@@ -43,8 +43,6 @@ import "../precompiles/ArbSys.sol";
 import "../libraries/CallerChecker.sol";
 import "../libraries/IReader4844.sol";
 
-import {IDAOracle, DataRootTuple, BinaryMerkleProof} from "../data-availability/IDAOracle.sol";
-
 import {L1MessageType_batchPostingReport} from "../libraries/MessageTypes.sol";
 import "../libraries/DelegateCallAware.sol";
 import {IGasRefunder} from "../libraries/IGasRefunder.sol";
@@ -63,9 +61,6 @@ contract SequencerInbox is DelegateCallAware, GasRefundEnabled, ISequencerInbox 
     uint256 public totalDelayedMessagesRead;
 
     IBridge public bridge;
-
-    /// @inheritdoc ISequencerInbox
-    address public constant BLOBSTREAM = 0x0000000000000000000000000000000000000000;
 
     /// @inheritdoc ISequencerInbox
     uint256 public constant HEADER_LENGTH = 40;
@@ -587,54 +582,6 @@ contract SequencerInbox is DelegateCallAware, GasRefundEnabled, ISequencerInbox 
             }
         }
 
-        if (data[0] & CELESTIA_MESSAGE_HEADER_FLAG != 0 && data.length >= 193) {
-            uint256 offset = 1;
-            uint256 sideNodesLength;
-            uint256 height;
-            uint256 key;
-            uint256 numLeaves;
-            uint256 tupleRootNonce;
-            bytes32 dataRoot;
-
-            // Directly read from calldata using assembly
-            assembly {
-                height := calldataload(add(data.offset, offset))
-                offset := add(offset, 32)
-
-                offset := add(offset, 64) // 'Start' and 'SharesLength' are skipped
-
-                key := calldataload(add(data.offset, offset))
-                offset := add(offset, 32)
-
-                numLeaves := calldataload(add(data.offset, offset))
-                offset := add(offset, 32)
-
-                tupleRootNonce := calldataload(add(data.offset, offset))
-                offset := add(offset, 32)
-
-                dataRoot := calldataload(add(data.offset, offset))
-                offset := add(offset, 32)
-
-                sideNodesLength := calldataload(add(data.offset, offset))
-                offset := add(offset, 32)
-            }
-
-            // Allocate and populate sideNodes
-            bytes32[] memory sideNodes = new bytes32[](sideNodesLength);
-            for (uint256 i = 0; i < sideNodesLength; ++i) {
-                assembly {
-                    mstore(
-                        add(sideNodes, add(0x20, mul(i, 0x20))),
-                        calldataload(add(add(data.offset, offset), mul(i, 0x20)))
-                    )
-                }
-            }
-
-            DataRootTuple memory tuple = DataRootTuple(height, dataRoot);
-            BinaryMerkleProof memory proof = BinaryMerkleProof(sideNodes, key, numLeaves);
-            if (!IDAOracle(BLOBSTREAM).verifyAttestation(tupleRootNonce, tuple, proof))
-                revert NoSuchDataRoot(dataRoot);
-        }
         return (keccak256(bytes.concat(header, data)), timeBounds);
     }
 

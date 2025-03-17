@@ -39,14 +39,14 @@ contract OneStepProverHostIo is IOneStepProver {
     // https://docs.celestia.org/how-to-guides/blobstream
     //Arb sepolia
     //Base sepolia
-    address public constant BLOBSTREAM = 0xc3e209eb245Fd59c8586777b499d6A665DF3ABD2;
+    //address public constant BLOBSTREAM = 0xc3e209eb245Fd59c8586777b499d6A665DF3ABD2;
 
     //Base
     //Arb
     //address public constant BLOBSTREAM = 0xA83ca7775Bc2889825BcDeDfFa5b758cf69e8794;
     
     //Sepolia 
-    //address public constant BLOBSTREAM = 0xF0c6429ebAB2e7DC6e05DaFB61128bE21f13cb1e;
+    address public constant BLOBSTREAM = 0xF0c6429ebAB2e7DC6e05DaFB61128bE21f13cb1e;
 
 
     //Mainnet
