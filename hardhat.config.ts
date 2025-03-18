@@ -132,7 +132,7 @@ module.exports = {
         : [],
     },
     sepolia: {
-      url: 'https://sepolia.infura.io/v3/' + process.env['INFURA_KEY'],
+      url: 'https://eth-sepolia.g.alchemy.com/v2/' + process.env['ALCHEMY_APIKEY'], 
       accounts: process.env['DEVNET_PRIVKEY']
         ? [process.env['DEVNET_PRIVKEY']]
         : [],
