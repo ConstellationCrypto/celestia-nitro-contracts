@@ -1,13 +1,13 @@
 import '@nomiclabs/hardhat-waffle'
 import 'hardhat-deploy'
 import '@nomiclabs/hardhat-ethers'
-//import '@nomicfoundation/hardhat-verify'
+import '@nomicfoundation/hardhat-verify'
 import '@typechain/hardhat'
 import 'solidity-coverage'
 import 'hardhat-gas-reporter'
 import 'hardhat-contract-sizer'
 import 'hardhat-ignore-warnings'
-import "@nomiclabs/hardhat-etherscan";
+//import "@nomiclabs/hardhat-etherscan";
 // import '@tovarishfin/hardhat-yul';
 import dotenv from 'dotenv'
 
@@ -120,7 +120,7 @@ module.exports = {
       },
     },
     mainnet: {
-      url: 'https://mainnet.infura.io/v3/' + process.env['INFURA_KEY'],
+      url: 'https://eth-mainnet.g.alchemy.com/v2/' + process.env['ALCHEMY_APIKEY'],
       accounts: process.env['MAINNET_PRIVKEY']
         ? [process.env['MAINNET_PRIVKEY']]
         : [],
