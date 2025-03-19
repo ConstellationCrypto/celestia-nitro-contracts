@@ -168,7 +168,7 @@ module.exports = {
         : [],
     },
     arb1: {
-      url: 'https://arb1.arbitrum.io/rpc',
+      url: 'https://arb-mainnet.g.alchemy.com/v2/' + process.env['ALCHEMY_APIKEY'], 
       accounts: process.env['MAINNET_PRIVKEY']
         ? [process.env['MAINNET_PRIVKEY']]
         : [],
@@ -234,6 +234,14 @@ module.exports = {
         urls: {
           apiURL: 'https://api-sepolia.basescan.org/api',
           browserURL: 'https://sepolia.basescan.org/',
+        },
+      },
+      {
+        network: 'base',
+        chainId: 8453,
+        urls: {
+          apiURL: 'https://api.basescan.org/api',
+          browserURL: 'https://basescan.org/',
         },
       },
     ],

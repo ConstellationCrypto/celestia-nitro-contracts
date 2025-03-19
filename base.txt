@@ -1,0 +1,321 @@
+yarn install && yarn build && yarn deploy-factory --network base
+yarn install v1.22.19
+warning package.json: License should be a valid SPDX license expression
+warning @constellation-labs/celestia-nitro-contracts-2.1.3-arb1-base@2.1.3-arb1-base: License should be a valid SPDX license expression
+[1/4] 🔍  Resolving packages...
+success Already up-to-date.
+$ patch-package
+patch-package 6.5.1
+Applying patches...
+No patch files found
+✨  Done in 0.56s.
+yarn run v1.22.19
+warning package.json: License should be a valid SPDX license expression
+$ hardhat compile
+Nothing to compile
+No need to generate any newer typings.
+✨  Done in 0.71s.
+yarn run v1.22.19
+warning package.json: License should be a valid SPDX license expression
+$ hardhat run scripts/deployment.ts --network base
+Sent transaction: 0x0c850aaf4e21be1061ab5f4fb59944a9d1ad28101eef1f46ffb9509ac5631f34
+* New Bridge created at address: 0x39cc1958e46e7C414A088761BEEd068Ac6735f77
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/Bridge.sol:Bridge at 0x39cc1958e46e7C414A088761BEEd068Ac6735f77
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract Bridge on Etherscan.
+https://basescan.org/address/0x39cc1958e46e7C414A088761BEEd068Ac6735f77#code
+Verified contract Bridge successfully.
+Sent transaction: 0x71b0961cc26c9c19940ada30975c734a89157dc75360fdf13d00fc8c33de724e
+Sent transaction: 0xe56dd9cd7799aa88a0eb56491677e8b9c87ba89f9e85bc60df95f38f7eb2df34
+* New SequencerInbox created at address: 0x4c5571f9fCFFb7D38ffc794e6A3c0D89D0b76e77 104857 0xa40d2880d705fc51F5c7fd862fF4281C5F92b04D false
+Warning: Since the VM version paris, "difficulty" was replaced by "prevrandao", which now returns a random number based on the beacon chain.
+  --> src/mocks/Simple.sol:52:22:
+   |
+52 |         difficulty = block.difficulty;
+   |                      ^^^^^^^^^^^^^^^^
+
+
+Warning: Unused local variable.
+   --> src/celestia/BlobstreamVerifier.sol:158:22:
+    |
+158 |         (bool valid, DAVerifier.ErrorCodes errorCode) = DAVerifier.verifyRowRootToDataRootTupleRoot(
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Warning: Function state mutability can be restricted to view
+  --> src/mocks/PendingBlkTimeAndNrAdvanceCheck.sol:19:5:
+   |
+19 |     function isAdvancing() external {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Warning: Function state mutability can be restricted to view
+  --> src/mocks/PendingBlkTimeAndNrAdvanceCheck.sol:24:5:
+   |
+24 |     function checkArbBlockHashReturnsLatest(bytes32 expected) external {
+   |     ^ (Relevant source part starts here and spans across multiple lines).
+
+
+Generating typings for: 190 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 380 typings!
+Compiled 198 Solidity files successfully (evm target: paris).
+Compiling your contract excluding unrelated contracts did not produce identical bytecode.
+Trying again with the full solc input used to compile and deploy it.
+This means that unrelated contracts may be displayed on Etherscan...
+
+Successfully submitted source code for contract
+src/bridge/SequencerInbox.sol:SequencerInbox at 0x4c5571f9fCFFb7D38ffc794e6A3c0D89D0b76e77
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified full build of contract SequencerInbox on Etherscan.
+https://basescan.org/address/0x4c5571f9fCFFb7D38ffc794e6A3c0D89D0b76e77#code
+Verified contract SequencerInbox successfully.
+Sent transaction: 0xee1e7eba825218df4d032b586ea634739b16306cb06f5c576a2a03874204acdc
+* New Inbox created at address: 0x58044F46054D37487f1927132E720C9e7b7A86Bf 104857
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/Inbox.sol:Inbox at 0x58044F46054D37487f1927132E720C9e7b7A86Bf
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract Inbox on Etherscan.
+https://basescan.org/address/0x58044F46054D37487f1927132E720C9e7b7A86Bf#code
+Verified contract Inbox successfully.
+Sent transaction: 0xe97f5af73df1376187f0b8d68b3244f4c86caa4bf0d6efafac85d0bdba6a3397
+* New RollupEventInbox created at address: 0xf1AA46962f0EA800806eDe1133742AAC72c8df9a
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupEventInbox.sol:RollupEventInbox at 0xf1AA46962f0EA800806eDe1133742AAC72c8df9a
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RollupEventInbox on Etherscan.
+https://basescan.org/address/0xf1AA46962f0EA800806eDe1133742AAC72c8df9a#code
+Verified contract RollupEventInbox successfully.
+Sent transaction: 0x55490065df22c8a38c1ada9428c3a32af4230ca31ecf2f67c68d79c1559d6f17
+* New Outbox created at address: 0x3292E498776EbE77BD78174f7cdDF6fD435e7b19
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/Outbox.sol:Outbox at 0x3292E498776EbE77BD78174f7cdDF6fD435e7b19
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract Outbox on Etherscan.
+https://basescan.org/address/0x3292E498776EbE77BD78174f7cdDF6fD435e7b19#code
+Verified contract Outbox successfully.
+Sent transaction: 0x8c91695e6d1237a04e2d946f85eafb1dee1215abae21584e5dd3d2da3700715a
+* New ERC20Bridge created at address: 0x09CA6198414FeE98f08C6fc3c0c6f9C19C0ba248
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/ERC20Bridge.sol:ERC20Bridge at 0x09CA6198414FeE98f08C6fc3c0c6f9C19C0ba248
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ERC20Bridge on Etherscan.
+https://basescan.org/address/0x09CA6198414FeE98f08C6fc3c0c6f9C19C0ba248#code
+Verified contract ERC20Bridge successfully.
+Sent transaction: 0xa352141ee0bf49a71dbdd8e20871384d8b139c0125a97c62c9fb973876a192f5
+* New SequencerInbox created at address: 0x20Af036D482c4a7569167fb4BfE42F1e0b0a1765 104857 0xa40d2880d705fc51F5c7fd862fF4281C5F92b04D true
+Nothing to compile
+No need to generate any newer typings.
+Compiling your contract excluding unrelated contracts did not produce identical bytecode.
+Trying again with the full solc input used to compile and deploy it.
+This means that unrelated contracts may be displayed on Etherscan...
+
+Successfully submitted source code for contract
+src/bridge/SequencerInbox.sol:SequencerInbox at 0x20Af036D482c4a7569167fb4BfE42F1e0b0a1765
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified full build of contract SequencerInbox on Etherscan.
+https://basescan.org/address/0x20Af036D482c4a7569167fb4BfE42F1e0b0a1765#code
+Verified contract SequencerInbox successfully.
+Sent transaction: 0xf9a8f102ccdef4347c21cc1d5c1ff4f8a52c974a758780c5dd231a1a74c9a943
+* New ERC20Inbox created at address: 0x1e1Ad1e011A7aD9691f03E78dF338C9E6ba005FA 104857
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/ERC20Inbox.sol:ERC20Inbox at 0x1e1Ad1e011A7aD9691f03E78dF338C9E6ba005FA
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ERC20Inbox on Etherscan.
+https://basescan.org/address/0x1e1Ad1e011A7aD9691f03E78dF338C9E6ba005FA#code
+Verified contract ERC20Inbox successfully.
+Sent transaction: 0x5b4eb6d66d3be12dce5a23848faa132f413bb9782e39f9dd71517ffed3706d8b
+* New ERC20RollupEventInbox created at address: 0x8c820f98494f0B28CBba275356749F1d82A1940D
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/ERC20RollupEventInbox.sol:ERC20RollupEventInbox at 0x8c820f98494f0B28CBba275356749F1d82A1940D
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ERC20RollupEventInbox on Etherscan.
+https://basescan.org/address/0x8c820f98494f0B28CBba275356749F1d82A1940D#code
+Verified contract ERC20RollupEventInbox successfully.
+Sent transaction: 0x31ef65a155dcca99fd5e1a2867e6541d2e38f722cafefc33affddc18a23f0b5b
+* New ERC20Outbox created at address: 0xfe461D9Dd1b416BF753b7370A8CBD1bac14a7Bf7
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/bridge/ERC20Outbox.sol:ERC20Outbox at 0xfe461D9Dd1b416BF753b7370A8CBD1bac14a7Bf7
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ERC20Outbox on Etherscan.
+https://basescan.org/address/0xfe461D9Dd1b416BF753b7370A8CBD1bac14a7Bf7#code
+Verified contract ERC20Outbox successfully.
+Sent transaction: 0x620fd1d7d716c2b73bb3572fe287733e467acc2d24ef50ec4ba3144cb2f54791
+* New BridgeCreator created at address: 0x805d7968701f585B85d6c71336D14A7Ab710BA7a 0x39cc1958e46e7C414A088761BEEd068Ac6735f77,0x4c5571f9fCFFb7D38ffc794e6A3c0D89D0b76e77,0x58044F46054D37487f1927132E720C9e7b7A86Bf,0xf1AA46962f0EA800806eDe1133742AAC72c8df9a,0x3292E498776EbE77BD78174f7cdDF6fD435e7b19 0x09CA6198414FeE98f08C6fc3c0c6f9C19C0ba248,0x20Af036D482c4a7569167fb4BfE42F1e0b0a1765,0x1e1Ad1e011A7aD9691f03E78dF338C9E6ba005FA,0x8c820f98494f0B28CBba275356749F1d82A1940D,0xfe461D9Dd1b416BF753b7370A8CBD1bac14a7Bf7
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/BridgeCreator.sol:BridgeCreator at 0x805d7968701f585B85d6c71336D14A7Ab710BA7a
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract BridgeCreator on Etherscan.
+https://basescan.org/address/0x805d7968701f585B85d6c71336D14A7Ab710BA7a#code
+Verified contract BridgeCreator successfully.
+Sent transaction: 0x5ab4414c298fa7b4561d8a06be45b42ce0ae25d56c60679da1750a7e4f692197
+* New OneStepProver0 created at address: 0x114F9ca02979eABd9735DFa6beb98E258B4bA62F
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/osp/OneStepProver0.sol:OneStepProver0 at 0x114F9ca02979eABd9735DFa6beb98E258B4bA62F
+for verification on the block explorer. Waiting for verification result...
+
+DEPRECATION WARNING: 'hardhat-etherscan' has been deprecated in favor of 'hardhat-verify'. You can find more information about the migration in the readme.
+Contract OneStepProver0 is already verified.
+Sent transaction: 0xab9de40823dc0ac85ff18afe92532a4f69c1eda8f0b6bee1812adca9a5d81478
+* New OneStepProverMemory created at address: 0x667101f05AD248cfC8022A4156130A144AC217bB
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/osp/OneStepProverMemory.sol:OneStepProverMemory at 0x667101f05AD248cfC8022A4156130A144AC217bB
+for verification on the block explorer. Waiting for verification result...
+
+DEPRECATION WARNING: 'hardhat-etherscan' has been deprecated in favor of 'hardhat-verify'. You can find more information about the migration in the readme.
+Contract OneStepProverMemory is already verified.
+Sent transaction: 0x051bf2f1adc5c80385be30cf73afe28a14a44a4c72d25537f1eb4f93d5321e74
+* New OneStepProverMath created at address: 0x3db3da0b9621f9F5Db410D7cAE8014B7DC4B128B
+The contract 0x3db3da0b9621f9F5Db410D7cAE8014B7DC4B128B has already been verified
+Verified contract OneStepProverMath successfully.
+Sent transaction: 0x6b390c9288c3d1f7c010d27b394710b3933b9a71885a5a5c941f7b69a9961014
+* New OneStepProverHostIo created at address: 0x10fEFf4Ef4b648d1485B934CBBc740Bc39D4ac3F
+Nothing to compile
+No need to generate any newer typings.
+Warning: Unused local variable.
+   --> src/celestia/BlobstreamVerifier.sol:158:22:
+    |
+158 |         (bool valid, DAVerifier.ErrorCodes errorCode) = DAVerifier.verifyRowRootToDataRootTupleRoot(
+    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+Successfully submitted source code for contract
+src/osp/OneStepProverHostIo.sol:OneStepProverHostIo at 0x10fEFf4Ef4b648d1485B934CBBc740Bc39D4ac3F
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract OneStepProverHostIo on Etherscan.
+https://basescan.org/address/0x10fEFf4Ef4b648d1485B934CBBc740Bc39D4ac3F#code
+Verified contract OneStepProverHostIo successfully.
+Sent transaction: 0x3ec52c5ad369162a822be207f4b6be511ebae4cbecc9f6c321b938f7cff7b372
+* New OneStepProofEntry created at address: 0xC1dEc749861b8c3a28809e9d2dD0FAAc247a9473 0x114F9ca02979eABd9735DFa6beb98E258B4bA62F 0x667101f05AD248cfC8022A4156130A144AC217bB 0x3db3da0b9621f9F5Db410D7cAE8014B7DC4B128B 0x10fEFf4Ef4b648d1485B934CBBc740Bc39D4ac3F
+The contract 0xC1dEc749861b8c3a28809e9d2dD0FAAc247a9473 has already been verified
+Verified contract OneStepProofEntry successfully.
+Sent transaction: 0x1355c19babe81b6c1ab35a4a33a9bbea3821736bc689f60a7eb0f814d805d762
+* New ChallengeManager created at address: 0x2A0ad14277fcA03C6ea58506F1B656d0822Ad4f8
+Nothing to compile
+No need to generate any newer typings.
+DEPRECATION WARNING: 'hardhat-etherscan' has been deprecated in favor of 'hardhat-verify'. You can find more information about the migration in the readme.
+Verification for ChallengeManager failed with the following error: More than one contract was found to match the deployed bytecode.
+Please use the contract parameter with one of the following contracts:
+  * src/challenge/ChallengeManager.sol:ChallengeManager
+  * src/mocks/SingleExecutionChallenge.sol:SingleExecutionChallenge
+
+For example:
+
+  hardhat verify --contract contracts/Example.sol:ExampleContract <other args>
+
+If you are running the verify subtask from within Hardhat instead:
+
+  await run("verify:verify", {
+    <other args>,
+    contract: "contracts/Example.sol:ExampleContract"
+  };
+Sent transaction: 0x1f6d5f962a367480f779555a6b7cc14226bd3566e8a7fafed70f8893068891f3
+* New RollupAdminLogic created at address: 0xB90b61B2c1291D935b2dff4c1641570cc90a61Af
+Nothing to compile
+No need to generate any newer typings.
+^ESuccessfully submitted source code for contract
+src/rollup/RollupAdminLogic.sol:RollupAdminLogic at 0xB90b61B2c1291D935b2dff4c1641570cc90a61Af
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RollupAdminLogic on Etherscan.
+https://basescan.org/address/0xB90b61B2c1291D935b2dff4c1641570cc90a61Af#code
+Verified contract RollupAdminLogic successfully.
+Sent transaction: 0xf926f55c3dd13cc168d50fbc530f195290e51685d98c43059bdc1024368a0e74
+* New RollupUserLogic created at address: 0x2Ca271504a85711F70326C6B7780791db632C61f
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupUserLogic.sol:RollupUserLogic at 0x2Ca271504a85711F70326C6B7780791db632C61f
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RollupUserLogic on Etherscan.
+https://basescan.org/address/0x2Ca271504a85711F70326C6B7780791db632C61f#code
+Verified contract RollupUserLogic successfully.
+Sent transaction: 0x2c2e918bcc87cccaf8dec6a0b385ff19c940da40e8f19f207f8d0faf4cc4ef03
+Sent transaction: 0x27ffeb85e7eff8bcb9da9525212d8011c708d8a006dbb2ebe818d59c89606313
+* New ValidatorUtils created at address: 0x59e64EF90903D2f26eBfd2deB0121d5b091b3ebB
+The contract 0x59e64EF90903D2f26eBfd2deB0121d5b091b3ebB has already been verified
+Verified contract ValidatorUtils successfully.
+Sent transaction: 0xf0e2822258b0874b5b3ff2d6e13148d73adc57266c913b92e8b178f020580753
+* New ValidatorWalletCreator created at address: 0xaD49a97D4969E941527Bb3B6df8122BC01733D57
+Generating typings for: 3 artifacts in dir: build/types for target: ethers-v5
+Successfully generated 106 typings!
+Compiled 1 Solidity file successfully (evm target: london).
+Successfully submitted source code for contract
+src/rollup/ValidatorWalletCreator.sol:ValidatorWalletCreator at 0xaD49a97D4969E941527Bb3B6df8122BC01733D57
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract ValidatorWalletCreator on Etherscan.
+https://basescan.org/address/0xaD49a97D4969E941527Bb3B6df8122BC01733D57#code
+Verified contract ValidatorWalletCreator successfully.
+Sent transaction: 0xfacfac4ff17e2b148b97eb9caa76037389a88edd94461fc159e18270b4120c1f
+* New RollupCreator created at address: 0x3ecADd4A0eFB62ebfeE8741143e5aEc9acDadc20
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupCreator.sol:RollupCreator at 0x3ecADd4A0eFB62ebfeE8741143e5aEc9acDadc20
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RollupCreator on Etherscan.
+https://basescan.org/address/0x3ecADd4A0eFB62ebfeE8741143e5aEc9acDadc20#code
+Verified contract RollupCreator successfully.
+Sent transaction: 0xa4835d9d79b26127642f879d97d70873cb25d403a19d637807244e9046919427
+* New DeployHelper created at address: 0x70E53C309F4a721cA80f23b76CfEdc6944533598
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/DeployHelper.sol:DeployHelper at 0x70E53C309F4a721cA80f23b76CfEdc6944533598
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract DeployHelper on Etherscan.
+https://basescan.org/address/0x70E53C309F4a721cA80f23b76CfEdc6944533598#code
+Verified contract DeployHelper successfully.
+Sent transaction: 0x996fa62a67fdab1b84bbca732bfb5a31db611ef40fd74ac817fd3ba46f914a02
+* New RollupProxy created at address: 0x7Df4ab8F86753626daF83661eec0862ddd0d1A73
+Nothing to compile
+No need to generate any newer typings.
+Successfully submitted source code for contract
+src/rollup/RollupProxy.sol:RollupProxy at 0x7Df4ab8F86753626daF83661eec0862ddd0d1A73
+for verification on the block explorer. Waiting for verification result...
+
+Successfully verified contract RollupProxy on Etherscan.
+https://basescan.org/address/0x7Df4ab8F86753626daF83661eec0862ddd0d1A73#code
+Verified contract RollupProxy successfully.
+Waiting for the Template to be set on the Rollup Creator
+Sent transaction: 0xb8383a4183497f575b0d69a46d3b6861c58133771bbd716e72b492641e345da1
+Template is set on the Rollup Creator
+✨  Done in 1517.27s.
