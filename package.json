@@ -1,6 +1,6 @@
 {
-  "name": "@constellation-labs/celestia-nitro-contracts-2.1.3-sepolia",
-  "version": "2.1.3-sepolia",
+  "name": "@constellation-labs/celestia-nitro-contracts-2.1.3-arb1-base",
+  "version": "2.1.3-arb1-base",
   "description": "Layer 2 precompiles and rollup for Arbitrum Nitro",
   "author": "Offchain Labs, Inc.",
   "license": "BUSL-1.1",
